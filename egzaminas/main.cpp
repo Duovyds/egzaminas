@@ -61,11 +61,26 @@ void tikrinimas(unordered_map<string, int > &hm) {
 
 
 
+void irasymas_i_faila(unordered_map<string, int > &hm){
+    
+    string failo_pav = string("/Users/dovydaskr/Documents/C++/egzaminas/egzaminas/rez.txt");
+    ofstream rez;
+    rez.open(failo_pav);
+    
+    for (const auto &x : hm) {
+            rez << x.first << ": " << x.second << endl;
+        }
+    rez.close();
+}
+
+
+
 int main(int argc, const char * argv[]) {
     
     
     std::unordered_map<string, int> hm = skaitymas_is_failo();
     tikrinimas(hm);
+    irasymas_i_faila(hm);
     
     for (const auto &x : hm) {
             cout << x.first << ": " << x.second << endl;
