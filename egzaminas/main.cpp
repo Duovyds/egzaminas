@@ -46,12 +46,26 @@ unordered_map<string, int> skaitymas_is_failo(){
 
 
 
+void tikrinimas(unordered_map<string, int > &hm) {
+    
+    for (auto it = hm.begin(); it != hm.end(); ) {
+            if (it->second <= 1) {
+                it = hm.erase(it);
+            } else {
+                ++it;
+            }
+        }
+    
+    
+}
+
+
 
 int main(int argc, const char * argv[]) {
     
     
     std::unordered_map<string, int> hm = skaitymas_is_failo();
-    
+    tikrinimas(hm);
     
     for (const auto &x : hm) {
             cout << x.first << ": " << x.second << endl;
