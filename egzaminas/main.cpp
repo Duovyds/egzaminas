@@ -173,6 +173,46 @@ void url_radimas() {
     rez.close();
     
 }
+// ---------------------------------------------------------------------------------------------------------------
+
+
+
+// Papildoma uzduotis
+// ---------------------------------------------------------------------------------------------------------------
+void papildoma(){
+    string failo_pavadinimas = string("/Users/dovydaskr/Documents/C++/egzaminas/egzaminas/input.txt");
+    ifstream failas;
+    failas.open(failo_pavadinimas);
+    
+    if (!failas) {
+        throw runtime_error("Problemos su failo atidarymu");
+    }
+    
+    vector<string> zodziai;
+    string junginys = "šuv";
+    string zodis;
+    int counter = 0;
+    
+    while(failas >> zodis){
+        if(zodis.find(junginys) != string::npos) {
+            zodziai.push_back(zodis);
+            counter++;
+        }
+    }
+    failas.close();
+    
+    
+    for (const auto& zodis : zodziai){
+        cout << zodis << endl;
+    }
+    cout << endl;
+    cout << "Zodziu skaicius: " << counter << endl;
+    
+    
+    
+}
+
+
 
 
 
@@ -184,6 +224,10 @@ int main(int argc, const char * argv[]) {
     irasymas_i_faila(hm, "rez1");
     std::unordered_map<string, vector<int>> hm2 = cross_reference_lentele(hm);
     url_radimas();
+    papildoma();
+    
+    
+//    rasti visus zodzius, kurie turi SUV raidziu jungini ir apskaiciuoti ju suma
     
     
     
