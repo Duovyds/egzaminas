@@ -3,4 +3,5 @@ Sukurti cross-reference lentelę, kurioje būtų nurodyta kuriuose eilutėse žo
 
 ### Algoritmo eiliškumas:
 1. Skaitome pradinio failo duomenis pažodžiui;
-2. Kiekvienam rastam žodžiui priskiriame papildomą reikšmę, kuri nusako kuriuose eilutėse tas žodis buvo paminėtas.
+2. Kiekvienam rastam žodžiui priskiriame papildomą reikšmę, kuri nusako kuriuose eilutėse tas žodis buvo paminėtas;
+3. Įrašome gautus rezultatus į failą.
